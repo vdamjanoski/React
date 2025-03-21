@@ -1,0 +1,13 @@
+.header-lists{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}

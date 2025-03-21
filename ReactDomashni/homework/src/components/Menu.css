@@ -1,0 +1,15 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+p{
+    width: 50%;
+    background-color: rgb(78, 76, 76);
+    color: black;
+    font-size: 17px;
+    border-radius: 15px;
+    padding: 10px;
+    letter-spacing: 1px;
+}
