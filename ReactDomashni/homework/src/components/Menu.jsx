@@ -2,7 +2,7 @@ import "./Menu.css"
 
 export function Menu(){
     return <div className="menu">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        <p className="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
              Corrupti quidem hic quas voluptates molestiae!
               Veniam possimus quidem, aut assumenda harum dolor itaque!
              Dolore iste impedit magnam similique ad minus omnis!
@@ -11,7 +11,7 @@ export function Menu(){
              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus neque, placeat culpa soluta eaque aliquid deleniti eveniet commodi facere dolor provident sint iusto? Vero nostrum in temporibus porro ullam molestiae.
              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos assumenda, voluptatibus quod dolore vitae unde exercitationem obcaecati? Unde quia, recusandae repudiandae aspernatur provident aliquam blanditiis officiis optio aperiam inventore expedita?
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veritatis fugiat, dignissimos voluptates molestiae fugit temporibus ipsum quae natus, id delectus deleniti aperiam explicabo deserunt nemo enim consectetur atque numquam.</p>
-        <p>
+        <p className="paragraph">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
              Non accusamus exercitationem aspernatur optio,
              voluptates est animi perspiciatis vel facere hic sint officiis laudantium repudiandae veniam ab.
