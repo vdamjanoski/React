@@ -2,18 +2,38 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Button from './examples/lecture 1/components/button'
-import { MyFirstComponent } from './examples/lecture 1/components/Vezbi/MyFirstComponent'
-import MySecondComponent from './examples/lecture 1/components/Vezbi/MySecondComponent'
+import  SimpleCounter  from "../src/examples/lecture 2/components/simpleCounter";
+import {Component} from "react"
+import UserCard from "../src/examples/lecture 2/components/userCard"
+import Greeting  from "../src/examples/lecture 2/components/greeting"
+import FruitList from './examples/lecture 2/components/FruitList';
+class App extends Component{
+  constructor(){
+    super()
 
-function App() {
+    this.state = {
+      showCounter: true
+    }
+  }
 
-  return (
+  toggleCounter=() => {
+    this.setState((prevState)=> ({
+      showCounter: !prevState.showCounter
+    }))
+  }
+
+  render(){
+    return (
       <div>
-        <MyFirstComponent/>
-        <MySecondComponent/>
+        <button onClick={this.toggleCounter}>Toggle Counter</button>
+        {this.state.showCounter ? <SimpleCounter /> : null}
+        <UserCard  />
+        <Greeting  />
+        <FruitList />
       </div>
-  )
+    )
+  }
 }
+
 
 export default App
