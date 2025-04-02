@@ -1,39 +1,39 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import  SimpleCounter  from "../src/examples/lecture 2/components/simpleCounter";
-import {Component} from "react"
-import UserCard from "../src/examples/lecture 2/components/userCard"
-import Greeting  from "../src/examples/lecture 2/components/greeting"
-import FruitList from './examples/lecture 2/components/FruitList';
-class App extends Component{
-  constructor(){
-    super()
+import Counter from './examples/lecture 3/components/counter'
+import Greeting from './examples/lecture 3/components/greeting'
+import Message from './examples/lecture 3/components/Message'
+import Parent from './examples/lecture 3/components/parent'
+import User from './examples/lecture 3/components/user'
+import EvenCounter from './examples/lecture 3/components/EvenCounter'
 
-    this.state = {
-      showCounter: true
-    }
+function App (){
+  const [show, setShow] = useState(true)
+  const [color, setColor] = useState("#cccccc")
+  const [count, setCount] = useState(2)
+
+  function toggleMsg(){
+    setShow(!show)
   }
 
-  toggleCounter=() => {
-    this.setState((prevState)=> ({
-      showCounter: !prevState.showCounter
-    }))
+  const changeColor = () => { setColor("red") }
+
+  function greet(name){
+    alert(`Hello, ${name}`);
   }
 
-  render(){
-    return (
-      <div>
-        <button onClick={this.toggleCounter}>Toggle Counter</button>
-        {this.state.showCounter ? <SimpleCounter /> : null}
-        <UserCard  />
-        <Greeting  />
-        <FruitList />
-      </div>
-    )
-  }
+
+  const handleIncrement = () => {setCount(count => count + 2);}
+
+  return(
+    <>
+    {/* <Counter/> */}
+    {/* <Message msg="Hello there, React is awesome!" toggleMsg={toggleMsg} show={show} color={color} changeColor={changeColor}/> */}
+    {/* <Greeting name="Darko" greetAlert={greet}/> */}
+    {/* <Parent /> */}
+    {/* <User isLoggedin={false}/> */}
+    <EvenCounter increment={handleIncrement} count={count}/>
+    </>
+  )
 }
-
-
 export default App
