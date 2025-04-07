@@ -1,0 +1,19 @@
+.users{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid rgb(192, 177, 177);
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(90, 88, 88);
+}
