@@ -13,6 +13,10 @@ import EffectUnmount from './examples/lecture-4/components/effectUnmount'
 import InfiniteLoop from './examples/lecture-4/components/infiniteLoop'
 import Users from './examples/lecture-4/components/users'
 import TextInput from './examples/lecture-4/components/textInput'
+import MouseEvents from './examples/lecture 5/components/mouseEvents'
+import KeyboardEvents from './examples/lecture 5/components/keyboardEvents'
+import ColorChange from './examples/lecture 5/components/colorChange'
+import ArrowKeyDisplay from './examples/lecture 5/components/ArrowKey'
 
 function App (){
   const [show, setShow] = useState(true)
@@ -49,7 +53,11 @@ function App (){
     <button onClick={()=>setToggleBoo(!toggleBool)}>Toggle Bool</button>
     <InfiniteLoop/>
     <Users/> */}
-    <TextInput/>
+    {/* <TextInput/> */}
+    {/* <MouseEvents/> */}
+    {/* <KeyboardEvents/> */}
+    {/* <ColorChange/> */}
+    <ArrowKeyDisplay/>
     </>
   )
 }
