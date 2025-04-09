@@ -13,6 +13,7 @@ const ColorPicker = () => {
                 ))}
             </div>
             <div className="colored-box" style={{backgroundColor: selectedColor, textAlign: "center", color: "black", border: "1px solid black" }}>{selectedColor}</div>
+            
         </div>
     )
 }
