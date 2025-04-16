@@ -1,64 +1,39 @@
-import { useState } from 'react'
-import './App.css'
-import Counter from './examples/lecture 3/components/counter'
-import Greeting from './examples/lecture 3/components/greeting'
-import Message from './examples/lecture 3/components/Message'
-import Parent from './examples/lecture 3/components/parent'
-import User from './examples/lecture 3/components/user'
-import EvenCounter from './examples/lecture 3/components/EvenCounter'
-import SimpleEffect from './examples/lecture-4/components/simpleEffect'
-import EffectOnce from './examples/lecture-4/components/effectOnce'
-import EffectWithDeps from './examples/lecture-4/components/effectWithDeps'
-import EffectUnmount from './examples/lecture-4/components/effectUnmount'
-import InfiniteLoop from './examples/lecture-4/components/infiniteLoop'
-import Users from './examples/lecture-4/components/users'
-import TextInput from './examples/lecture-4/components/textInput'
-import MouseEvents from './examples/lecture 5/components/mouseEvents'
-import KeyboardEvents from './examples/lecture 5/components/keyboardEvents'
-import ColorChange from './examples/lecture 5/components/colorChange'
-import ArrowKeyDisplay from './examples/lecture 5/components/ArrowKey'
+import { useState } from "react";
+import "./App.css";
+import Home from "./examples/lecture 8/pages/home";
+import { Route, Routes } from "react-router-dom";
+import About from "./examples/lecture 8/pages/about";
+import Contact from "./examples/lecture 8/pages/contact";
+import Navbar from "./examples/lecture 8/components/navbar";
+import Authentication from "./examples/lecture 8/pages/authentication";
+import SignIn from "./examples/lecture 8/pages/signIn";
+import SignUp from "./examples/lecture 8/pages/signUp";
+import User from "./examples/lecture 8/pages/user";
+import NotFound from "./examples/lecture 8/pages/notFound";
 
-function App (){
-  const [show, setShow] = useState(true)
-  const [color, setColor] = useState("#cccccc")
-  const [count, setCount] = useState(2)
+function App() {
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
-  function toggleMsg(){
-    setShow(!show)
-  }
-
-  const changeColor = () => { setColor("red") }
-
-  function greet(name){
-    alert(`Hello, ${name}`);
-  }
-
-
-  const handleIncrement = () => {setCount(count => count + 2);}
-
-  const [toggleBool, setToggleBoo] = useState(true)
-
-  return(
+  return (
     <>
-    {/* <Counter/>
-    <Message msg="Hello there, React is awesome!" toggleMsg={toggleMsg} show={show} color={color} changeColor={changeColor}/>
-    <Greeting name="Darko" greetAlert={greet}/>
-    <Parent />
-    <User isLoggedin={false}/>
-    <EvenCounter increment={handleIncrement} count={count}/>
-    <SimpleEffect/>
-    <EffectOnce/>
-    <EffectWithDeps/>
-    {toggleBool ? <EffectUnmount toggleBool={toggleBool}/> : "null"}
-    <button onClick={()=>setToggleBoo(!toggleBool)}>Toggle Bool</button>
-    <InfiniteLoop/>
-    <Users/> */}
-    {/* <TextInput/> */}
-    {/* <MouseEvents/> */}
-    {/* <KeyboardEvents/> */}
-    {/* <ColorChange/> */}
-    <ArrowKeyDisplay/>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/auth" element={<Authentication />}>
+          <Route
+            path="signin"
+            element={
+              <SignIn isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
+            }
+          />
+          <Route path="signup" element={<SignUp />} />
+        </Route>
+        <Route path="/user/:id" element={<User/>} />
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
     </>
-  )
+  );
 }
-export default App
+export default App;
