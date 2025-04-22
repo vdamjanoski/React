@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import './countryCard.css'
 
 function CountryCard() {
   const { name } = useParams();
@@ -14,9 +15,10 @@ function CountryCard() {
 
   if (country) return (
     <div>
-        <Link to={"/"}>Home</Link>
+      <Link to={"/"}>Home</Link>
+      <div className="container">
       <h2>{country.name.common}</h2>
-      <img src={country.flags.svg} width="200" />
+      <img src={country.flags.svg} width="200" className="flag"/>
       <p>Capital: {country.capital?.[0]}</p>
       <p>Region: {country.region}</p>
       <p>Population: {country.population}</p>
@@ -30,6 +32,7 @@ function CountryCard() {
             </div>
                     )}
       <p>Timezones: {country.timezones}</p>
+      </div>
     </div>
   );
 }
