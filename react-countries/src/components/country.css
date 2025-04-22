@@ -22,10 +22,10 @@
 #root > div > div > input{
     font-size: 15px;
     padding: 0 20px;
-    width: 300px;
+    width: 98%;
     height: 50px;
     border-radius: 30px;
-    color: black;
-    background-color: #F87060;
+    color: white;
+    background-color: #2f2e55;
     border: 0;
 }
