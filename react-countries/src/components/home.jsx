@@ -19,7 +19,7 @@ function Home(){
 
     return(
         <div>
-            <input type="text" placeholder="Search..." onChange={handleSearch} value={search}/>
+            <input type="text" placeholder="Search..." onChange={handleSearch} value={search} className="search-input"/>
             <div className="countries">
             {searchCountries.length > 0 && searchCountries.map((country, index) => {
                 return <div className="country" key={index}>
