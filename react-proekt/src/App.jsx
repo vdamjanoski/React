@@ -1,38 +1,25 @@
 import { useState } from "react";
 import "./App.css";
-import Home from "./examples/lecture 8/pages/home";
-import { Route, Routes } from "react-router-dom";
-import About from "./examples/lecture 8/pages/about";
-import Contact from "./examples/lecture 8/pages/contact";
-import Navbar from "./examples/lecture 8/components/navbar";
-import Authentication from "./examples/lecture 8/pages/authentication";
-import SignIn from "./examples/lecture 8/pages/signIn";
-import SignUp from "./examples/lecture 8/pages/signUp";
-import User from "./examples/lecture 8/pages/user";
-import NotFound from "./examples/lecture 8/pages/notFound";
+import Header from "./examples/lecture 8/components/header";
+import UserProvider from "./examples/lecture 8/context/userContext";
+import ParentCounter from "./examples/lecture 8/components/parentCounter";
+import { CounterProvider } from "./examples/lecture 8/context/counterContext";
+import { UsersProvider } from "./examples/lecture 8/components/usersProvider";
+import { UsersManagmentApp } from "./examples/lecture 8/components/usersManagmentApp";
 
 function App() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
-
+  // const [user] = useState({name: "Michael", age: 30})
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/auth" element={<Authentication />}>
-          <Route
-            path="signin"
-            element={
-              <SignIn isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
-            }
-          />
-          <Route path="signup" element={<SignUp />} />
-        </Route>
-        <Route path="/user/:id" element={<User/>} />
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
+    {/* <UserProvider>
+    <Header/>
+    </UserProvider> */}
+    {/* <CounterProvider>
+      <ParentCounter/>
+    </CounterProvider> */}
+    <UsersProvider>
+      <UsersManagmentApp/>
+    </UsersProvider>
     </>
   );
 }

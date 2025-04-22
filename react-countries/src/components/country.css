@@ -1,15 +1,12 @@
 .countries{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 .country{
     border: 1px solid black;
-    padding-bottom: 25px;
 }
 .maps-link{
     border: 1px solid blue;
-    width: 100px;
-    padding: 20px;
     background-color: blue;
     border-radius: 15px;
 }

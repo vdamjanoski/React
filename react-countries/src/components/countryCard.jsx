@@ -20,6 +20,16 @@ function CountryCard() {
       <p>Capital: {country.capital?.[0]}</p>
       <p>Region: {country.region}</p>
       <p>Population: {country.population}</p>
+      {country.currencies && (
+            <div>
+                {Object.values(country.currencies).map((currency, index) => (
+                  <div>
+                    Currencies: <span key={index}><b>{currency.name} ({currency.symbol})</b></span>
+                  </div>
+                ))}
+            </div>
+                    )}
+      <p>Timezones: {country.timezones}</p>
     </div>
   );
 }

@@ -4,6 +4,13 @@ import './country.css'
 
 function Home(){
     const [countries, setCountries] = useState([])
+    const [search, setSearch] = useState("")
+    const searchCountries = countries.filter(country =>
+        country.name.common.toLowerCase().includes(search.toLowerCase())
+      );
+    function handleSearch(e) {
+        setSearch(e.target.value);
+      }
     useEffect(() => {
         fetch("https://restcountries.com/v3.1/all")
         .then((response) => response.json())
@@ -11,25 +18,19 @@ function Home(){
     },[])
 
     return(
-        <div className="countries">
-            {countries.length > 0 && countries.map((country, index) => {
+        <div>
+            <input type="text" placeholder="Search..." onChange={handleSearch} value={search}/>
+            <div className="countries">
+            {searchCountries.length > 0 && searchCountries.map((country, index) => {
                 return <div className="country" key={index}>
                     <h1>{country.name.common}</h1>
                     <p>Capital city: <b>{country.capital}</b></p>
                     <Link to={`/country/${country.name.common}`}><img src={country.flags.png} alt="" /></Link>
-                    <p>Region: {country.region}</p>
-                    <p>Timezones: {country.timezones}</p>
-                    {country.currencies && (
-            <div>
-                <h4>Currencies:</h4>
-                {Object.values(country.currencies).map((currency, index) => (
-                    <h4 key={index}>{currency.name} ({currency.symbol})</h4>
-                ))}
-            </div>
-                    )}
+                    <br />
                     <Link to={country.maps.googleMaps} target="_blank" className="maps-link">Google maps link</Link>
                 </div>
             })}
+         </div>
         </div>
     )
 

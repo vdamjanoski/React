@@ -1,26 +1,15 @@
-import { Link,NavLink } from "react-router-dom"
+import { useContext } from "react"
+import UserProfile from "./userProfile"
+import { UserContext } from "../context/userContext"
 
 function Navbar(){
-    const linkStyle = {textDecoration: "none", linkStyle: "none"}
-    const ulStyle={backgroundColor: "#f9f9f9", width: "100vw", height: "50px", display: "flex", alignItems: "center", position: "absolute", left: "0", top: "0"}
-    
+    const {user} = useContext(UserContext)
+    console.log(user, "From navbar");
     return(
-        <nav style={ulStyle}>
-            <ul style={{display: "flex", gap: "20px", listStyle: "none"}}>
-                <li>
-                    <NavLink to="/" style={linkStyle}>Home</NavLink>
-                </li>
-                <li>
-                    <Link to="/about" style={linkStyle}>About</Link>
-                </li>
-                <li>
-                    <Link to="/contact" style={linkStyle}>Contact</Link>
-                </li>
-                <li>
-                    <Link to="/auth" style={linkStyle}>Authentication</Link>
-                </li>
-            </ul>
-        </nav>
+        <div>
+            <h2>Simple Navbar Component</h2>
+            <UserProfile/>
+        </div>
     )
 }
 export default Navbar
