@@ -1,11 +1,11 @@
 import "./App.css";
-import WeatherApp from "./examples/exercise/components/weatherApp";
+import ToDoList from "./examples/Vezhbi/ToDo-List/ToDoList";
 
 function App() {
 
   return (
     <>
-    <WeatherApp/>
+    <ToDoList/>
     </>
   );
 }
