@@ -5,9 +5,9 @@ import MovieList from "./pages/movieList/movieList";
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Routes>
-        <Route path="/" element={<MovieList />} />
+        <Route path="/" element={<MovieList />}/>
       </Routes>
     </>
   );
